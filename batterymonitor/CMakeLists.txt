@@ -8,6 +8,7 @@ link_directories(${CMAKE_BINARY_DIR}/$<CONFIG>/lib)
 set(CMAKE_INCLUDE_CURRENT_DIR "YES")
 set(CMAKE_AUTOMOC "YES")
 set(CMAKE_AUTOUIC "YES")
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 COMPONENTS WebSockets REQUIRED)
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
