@@ -2,12 +2,12 @@
 #define SYSTEMTRAYICON_H
 
 #include <QObject>
+#include <QSystemTrayIcon>
 
 #include <memory>
 
 #include "batteryindicator.h"
 
-class QSystemTrayIcon;
 class TagSocket;
 
 class SystemTrayIcon : public QObject
@@ -22,8 +22,10 @@ signals:
 
 private slots:
     void onStateOfChargeChange(double aValue);
+    void onActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
+    void onIconClicked();
     std::unique_ptr<QSystemTrayIcon> mSystemTrayIcon;
     BatteryIndicator mBatteryIndicator;
 

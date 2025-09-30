@@ -55,3 +55,16 @@ void SystemTrayIcon::onStateOfChargeChange(double aValue)
         mSystemTrayIcon->setVisible(true);
     }
 }
+
+void SystemTrayIcon::onActivated(QSystemTrayIcon::ActivationReason reason)
+{
+    if (reason == QSystemTrayIcon::ActivationReason::Trigger)
+    {
+        onIconClicked();
+    }
+}
+
+void SystemTrayIcon::onIconClicked()
+{
+
+}
